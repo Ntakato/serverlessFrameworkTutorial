@@ -1,0 +1,12 @@
+{
+  "name": "sls_tutorial",
+  "version": "1.0.0",
+  "description": "serverless tutorial",
+  "main": "index.js",
+  "author": "takato nakamura",
+  "license": "MIT",
+  "dependencies": {
+    "@vendia/serverless-express": "^4.0.0-rc.7",
+    "express": "^4.17.1"
+  }
+}

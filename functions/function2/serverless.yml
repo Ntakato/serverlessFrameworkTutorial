@@ -1,0 +1,6 @@
+serverlessTest2:
+  handler: functions/function2/lambda2.handler
+  events:
+    - http: ANY /v1/fun2
+    - http: 'ANY /v1/fun2/{proxy+}'
+ 

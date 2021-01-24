@@ -12,8 +12,5 @@ package:
     - README.md
 
 functions:
-  serverlessTest:
-    handler: lambda.handler
-    events:
-      - http: ANY /
-      - http: 'ANY {proxy+}'
+  - ${file(./functions/function1/serverless.yml)}
+  - ${file(./functions/function2/serverless.yml)}
