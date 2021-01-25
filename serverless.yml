@@ -12,5 +12,14 @@ package:
     - README.md
 
 functions:
-  - ${file(./functions/function1/serverless.yml)}
-  - ${file(./functions/function2/serverless.yml)}
+  serverlessTest1:
+    handler: lambda.handler1
+    events:
+      - http: ANY /v1/fun1
+      - http: 'ANY /v1/fun1/{proxy+}'
+  serverlessTest2:
+    handler: lambda.handler2
+    events:
+      - http: ANY /v1/fun2
+      - http: 'ANY /v1/fun2/{proxy+}'
+  

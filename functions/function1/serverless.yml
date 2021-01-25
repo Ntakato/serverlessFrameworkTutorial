@@ -1,5 +1,0 @@
-serverlessTest1:
-  handler: functions/function1/lambda1.handler
-  events:
-    - http: ANY /v1/fun1
-    - http: 'ANY /v1/fun1/{proxy+}'
