@@ -11,7 +11,7 @@ router.get('/v1/fun2/user/:id', validator.userId, (req, res) => {
         'user1': { name: 'Bob', age: 23 },
         'user2': { name: 'Alice', age: 20 },
     }
-    res.json([{ user: users[id] }])
+    res.json({ ...users[id] })
 })
 
 module.exports = router
