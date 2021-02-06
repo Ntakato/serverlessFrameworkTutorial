@@ -9,10 +9,8 @@ const badRequestErrorHandling = (req, res, next) => {
 }
 
 const createUser = [
-    [
-        body('name').isString(),
-        body('age').isInt(),
-    ],
+    body('name').isString(),
+    body('age').isInt(),
     badRequestErrorHandling
 ]
 

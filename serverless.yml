@@ -5,21 +5,31 @@ provider:
   runtime: nodejs12.x
   region: ap-northeast-1
 
+plugins: 
+ - serverless-offline
+
 package:
   exclude:
     - .git/**
     - test/**
     - README.md
+    - functions/**
 
 functions:
   serverlessTest1:
-    handler: lambda.handler1
+    handler: functions/function1/lambda.handler
+    package:
+      include: 
+        - functions/function1/**
+      individually: true 
     events:
-      - http: ANY /v1/fun1
-      - http: 'ANY /v1/fun1/{proxy+}'
+      - http: ANY /fun1/v1/user
   serverlessTest2:
-    handler: lambda.handler2
+    handler: functions/function2/lambda.handler
+    package:
+      include: 
+        - functions/function2/**
+      individually: true 
     events:
-      - http: ANY /v1/fun2
-      - http: 'ANY /v1/fun2/{proxy+}'
+      - http: ANY /fun2/v1/user/{id}
   

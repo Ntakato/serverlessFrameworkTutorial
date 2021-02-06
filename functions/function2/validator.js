@@ -9,10 +9,8 @@ const badRequestErrorHandling = (req, res, next) => {
 }
 
 const userId = [
-    [
-        param('id').isString(),
-        param('id').isLength({ min: 5, max: 5 })
-    ],
+    param('id').isString(),
+    param('id').isLength({ min: 5, max: 5 }),
     badRequestErrorHandling
 ]
 
